@@ -46,8 +46,6 @@ public class Main extends ApplicationAdapter {
         sceneBuilder.setBatch(batch);
         sceneBuilder.setCursorPos(cursorPos);
 
-        audioHandler.setOptionMenu(sceneBuilder.getOptionMenu());
-
         sceneController = new SceneController(sceneBuilder, GameScene.MENU);
 
         setGameSave();
@@ -84,7 +82,8 @@ public class Main extends ApplicationAdapter {
 
         cursorPos.update();
 
-        audioHandler.setAudioVolume();
+        audioHandler.setSoundVolume(sceneBuilder.getOptionMenu().getSoundVolume());
+        audioHandler.setMusicVolume(sceneBuilder.getOptionMenu().getMusicVolume());
 
         setSelectedCharacter();
 
