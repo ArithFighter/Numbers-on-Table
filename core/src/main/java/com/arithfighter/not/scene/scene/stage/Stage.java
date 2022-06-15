@@ -43,7 +43,7 @@ public class Stage extends SceneComponent implements SceneEvent, MouseEvent {
         playerService.setNumberBoxDisplacer(gamePlayComponent.getNumberBoxDisplacer());
         playerService.setPlayRecord(cardLimitManager.getPlayRecord());
         playerService.setSumBoxModel(gamePlayComponent.getSumBoxModel());
-        playerService.createPlayers(textures, cards);
+        playerService.createPlayers(textures,cards);
 
         pauseButton = new SceneControlButton(textures[6], 1.8f);
         pauseButton.getButton().setPosition(1000, 600);

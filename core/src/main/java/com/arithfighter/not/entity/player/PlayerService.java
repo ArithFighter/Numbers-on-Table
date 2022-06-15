@@ -5,6 +5,7 @@ import com.arithfighter.not.entity.sumbox.SumBoxModel;
 import com.arithfighter.not.system.GameNumProducer;
 import com.arithfighter.not.system.RandomNumProducer;
 import com.arithfighter.not.pojo.Recorder;
+import com.arithfighter.not.widget.bar.EnergyBar;
 import com.badlogic.gdx.graphics.Texture;
 
 import java.util.ArrayList;
@@ -39,11 +40,10 @@ public class PlayerService {
         players = new Player[characterQuantity];
         SkillHandler skillHandler = new SkillHandler(numberBoxEntity);
 
-        for (int i = 0; i < characterQuantity; i++)
-            players[i] = new Player(
-                    textures,
-                    cards,
-                    CharacterList.values()[i]) {
+        EnergyBar energyBar = new EnergyBar(textures);
+
+        for (int i = 0; i < characterQuantity; i++){
+            players[i] = new Player(cards, CharacterList.values()[i]) {
                 @Override
                 public void checkNumberCardPlayed() {
                     sumBoxModel.update(getHand().getCardNumber());
@@ -65,6 +65,9 @@ public class PlayerService {
                     skillHandler.cast(character);
                 }
             };
+            players[i].setEnergyBarToController(energyBar);
+        }
+
     }
 
     public Player[] getPlayers() {

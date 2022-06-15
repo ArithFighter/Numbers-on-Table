@@ -13,6 +13,7 @@ import com.arithfighter.not.entity.sumbox.SumBoxModel;
 import com.arithfighter.not.font.Font;
 import com.arithfighter.not.gecko.*;
 import com.arithfighter.not.pojo.Point;
+import com.arithfighter.not.widget.bar.EnergyBar;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

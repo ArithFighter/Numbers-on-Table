@@ -14,15 +14,16 @@ public class Player {
 
     private SkillState skillState = SkillState.NEUTRAL;
 
-    public Player(Texture[] textures, Texture[] cards, CharacterList character) {
+    public Player(Texture[] cards, CharacterList character) {
         energyBarController = new EnergyBarController(character);
-
-        EnergyBar energyBar = new EnergyBar(textures);
-        energyBarController.setEnergyBar(energyBar);
 
         hand = new Hand(cards, character);
 
         this.character = character;
+    }
+
+    public void setEnergyBarToController(EnergyBar energyBar) {
+        energyBarController.setEnergyBar(energyBar);
     }
 
     public Hand getHand() {
